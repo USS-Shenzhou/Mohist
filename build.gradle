@@ -806,3 +806,12 @@ task setup() {  //These must be strings so that we can do lazy resolution. Else 
 }
 
 project.gradle.startParameter.excludedTaskNames.add(':clean:genPatches')
+
+tasks.register("githubActionOutput") {
+    it.onlyIf {
+        System.env.GITHUB_ACTIONS
+    }
+    it.doLast {
+        println "::set-output name=artifact_name::${archivesBaseName}-${version}"
+    }
+}
