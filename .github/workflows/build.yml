@@ -37,6 +37,8 @@ jobs:
       - name: Get Short Identifier
         uses: benjlevesque/short-sha@v1.2
         id: short-sha
+      - name: Get Permission
+        run: chmod 777 gradlew
       - name: Build
         id: build
         env:
