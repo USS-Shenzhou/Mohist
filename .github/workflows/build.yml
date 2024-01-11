@@ -48,4 +48,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{steps.build.outputs.artifact_name}}.dev-${{steps.short-sha.outputs.sha}}.jar
-          path: projects/mohist/build/libs/${{steps.build.outputs.artifact_name}}.jar
+          path: projects/mohist/build/libs/*
