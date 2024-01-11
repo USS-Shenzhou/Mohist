@@ -805,6 +805,8 @@ task setup() {  //These must be strings so that we can do lazy resolution. Else 
     dependsOn ':mohist:extractMapped'
 }
 
+tasks.compileJava.mustRunAfter tasks.extractMapped
+
 project.gradle.startParameter.excludedTaskNames.add(':clean:genPatches')
 
 tasks.register("githubActionOutput") {
