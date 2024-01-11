@@ -805,7 +805,7 @@ task setup() {  //These must be strings so that we can do lazy resolution. Else 
     dependsOn ':mohist:extractMapped'
 }
 
-task("clean:compileJava").mustRunAfter(task("clean:extractMapped"))
+tasks.getByPath(':clean:compileJava').mustRunAfter tasks.getByPath(':clean:extractMapped')
 
 project.gradle.startParameter.excludedTaskNames.add(':clean:genPatches')
 
